@@ -1,0 +1,16 @@
+PODS:
+  - XTEmptyDataSet (0.1.0)
+
+DEPENDENCIES:
+  - XTEmptyDataSet (from `../`)
+
+EXTERNAL SOURCES:
+  XTEmptyDataSet:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XTEmptyDataSet: 3956a3b96c82559a865db17b81287781e49c3ec5
+
+PODFILE CHECKSUM: 4da0ea77f5f1346c7b9e52d70aba1ba08a4d0324
+
+COCOAPODS: 1.9.3

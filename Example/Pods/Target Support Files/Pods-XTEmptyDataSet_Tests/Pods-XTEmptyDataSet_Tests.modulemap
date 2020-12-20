@@ -1,0 +1,6 @@
+framework module Pods_XTEmptyDataSet_Tests {
+  umbrella header "Pods-XTEmptyDataSet_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

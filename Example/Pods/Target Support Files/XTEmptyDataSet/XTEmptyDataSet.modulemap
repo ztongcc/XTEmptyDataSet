@@ -1,0 +1,6 @@
+framework module XTEmptyDataSet {
+  umbrella header "XTEmptyDataSet-umbrella.h"
+
+  export *
+  module * { export * }
+}

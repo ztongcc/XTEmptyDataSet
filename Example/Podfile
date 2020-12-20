@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'XTEmptyDataSet_Example' do
+  pod 'XTEmptyDataSet', :path => '../'
+
+  target 'XTEmptyDataSet_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
