@@ -20,10 +20,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.view xt_setEmptyDataSet:XTEmptyDataSetTypeLoading style:XTDataSetStyleIndicator];
+    [self.view xt_setupEmptySetData:^(XTEmptyDataSetType type, XTDataSetConfig * _Nonnull config) {
+        if (type == XTEmptyDataSetTypeLoading) {
+            config.emptyStyle = XTDataSetStyleIndicator;
+        }else if (type == XTEmptyDataSetTypeError) {
+            config.emptyStyle = XTDataSetStyleText;
+            config.text = @"网络出错";
+        }else if (type == XTEmptyDataSetTypeNoData) {
+            config.emptyStyle = XTDataSetStyleTextAction;
+            config.text = @"暂无数据";
+            config.buttonCornerRadius = 4;
+            config.buttonBorderColor = [UIColor blueColor];
+            config.buttonBorderWidth = 1;
+            
+            config.buttonNormalTitleColor = [UIColor blueColor];
+            config.buttonTouchHandler = ^{
+                NSLog(@"重试");
+                [self.view xt_display:XTEmptyDataSetTypeError];
+            };
+        }
+    }];
     
     
     [self.view xt_display:XTEmptyDataSetTypeLoading];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.view xt_display:XTEmptyDataSetTypeNoData];
+    });
 }
 
 - (void)showDocumentPicker {
