@@ -57,13 +57,13 @@
 }
 
 - (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type {
-    [self reloadData];
-
-    [self xt_display:type];
+    [self xt_reloadDataIfEmptyDisplay:type refreshEmptyData:NO];
 }
 
 - (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate {
-    
+    [self reloadData];
+ 
+    [self xt_display:type reloadData:isUpdate];
 }
 
 @end
