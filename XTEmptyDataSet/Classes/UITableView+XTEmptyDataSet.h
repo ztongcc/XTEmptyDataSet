@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)xt_reloadDataIfEmptyDispaly:(XTEmptyDataSetType)type;
 
+- (void)xt_reloadDataIfEmptyDispaly:(XTEmptyDataSetType)type updateData:(BOOL)isUpdate;
 @end
 
 NS_ASSUME_NONNULL_END

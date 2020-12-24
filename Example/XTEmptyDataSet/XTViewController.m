@@ -36,7 +36,6 @@
             config.buttonNormalTitleColor = [UIColor blueColor];
             config.buttonTouchHandler = ^{
                 NSLog(@"重试");
-                [self.view xt_display:XTEmptyDataSetTypeError];
             };
         }
     }];
