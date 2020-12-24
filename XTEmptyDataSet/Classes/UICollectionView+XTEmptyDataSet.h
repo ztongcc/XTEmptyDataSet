@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UICollectionView (XTEmptyDataSet)
 
-- (void)xt_reloadDataIfEmptyDispaly:(XTEmptyDataSetType)type;
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type;
+
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate;
 
 @end
 

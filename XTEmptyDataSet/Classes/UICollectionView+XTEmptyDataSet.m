@@ -56,7 +56,7 @@
     return items;
 }
 
-- (void)xt_reloadDataIfEmptyDispaly:(XTEmptyDataSetType)type {
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type {
     [self reloadData];
     
     [self xt_display:type];
