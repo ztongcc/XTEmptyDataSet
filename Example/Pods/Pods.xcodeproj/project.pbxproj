@@ -11,10 +11,8 @@
 		1F60D9149556D78A4FCCE92CB95AB97B /* XTEmptyDataSet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC98E3E8C733FF8C427A7E22CE89DF /* XTEmptyDataSet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F15C6CA6A2D2B6610FB8D8EF96B085 /* UIView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6272FA0C4F2E8E8614036E2DF48A31 /* UIView+XTEmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D5E225A7FB4C9FB14356D8138D3989A /* Pods-XTEmptyDataSet_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F9C757F15A19588D329CE509238CB /* Pods-XTEmptyDataSet_Tests-dummy.m */; };
-		9C709AD325938FC800609C55 /* UITableView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C709AD125938FC800609C55 /* UITableView+XTEmptyDataSet.h */; };
-		9C709AD425938FC800609C55 /* UITableView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C709AD225938FC800609C55 /* UITableView+XTEmptyDataSet.m */; };
-		9C709ADA25938FEE00609C55 /* UICollectionView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C709AD825938FEE00609C55 /* UICollectionView+XTEmptyDataSet.h */; };
-		9C709ADB25938FEE00609C55 /* UICollectionView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C709AD925938FEE00609C55 /* UICollectionView+XTEmptyDataSet.m */; };
+		9C709AE125962F8800609C55 /* UIScrollView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C709ADF25962F8800609C55 /* UIScrollView+XTEmptyDataSet.h */; };
+		9C709AE225962F8800609C55 /* UIScrollView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C709AE025962F8800609C55 /* UIScrollView+XTEmptyDataSet.m */; };
 		AE75A3B456C59D9077CA5BC07BFCB9E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BF45ACE81FE6C49AD62C6BD9C5850D55 /* Pods-XTEmptyDataSet_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB385148FBDFAF5B4A5C45A67878F754 /* Pods-XTEmptyDataSet_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8D033C94EFFFC4C1231044F1BB6FFA3 /* Pods-XTEmptyDataSet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1243A06B712E759FB5FE6D83F383CF /* Pods-XTEmptyDataSet_Example-dummy.m */; };
@@ -64,10 +62,8 @@
 		8AC4EFE35D9C2B958C78FA6BA1C88127 /* XTEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
 		912383C0C45202A1CDBCCE69E53F706C /* Pods-XTEmptyDataSet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTEmptyDataSet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		93D4922CA7F4C509AD3CA88D5B8D72BE /* Pods-XTEmptyDataSet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTEmptyDataSet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		9C709AD125938FC800609C55 /* UITableView+XTEmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITableView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UITableView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
-		9C709AD225938FC800609C55 /* UITableView+XTEmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UITableView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UITableView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
-		9C709AD825938FEE00609C55 /* UICollectionView+XTEmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UICollectionView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
-		9C709AD925938FEE00609C55 /* UICollectionView+XTEmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UICollectionView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
+		9C709ADF25962F8800609C55 /* UIScrollView+XTEmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UIScrollView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
+		9C709AE025962F8800609C55 /* UIScrollView+XTEmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UIScrollView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
 		9D6272FA0C4F2E8E8614036E2DF48A31 /* UIView+XTEmptyDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UIView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A703E5341429D19C917450F2D60AF424 /* XTEmptyDataSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTEmptyDataSet.release.xcconfig; sourceTree = "<group>"; };
@@ -200,10 +196,8 @@
 			children = (
 				9D6272FA0C4F2E8E8614036E2DF48A31 /* UIView+XTEmptyDataSet.h */,
 				4E8F2E65DACC56D56A6A381FF255F801 /* UIView+XTEmptyDataSet.m */,
-				9C709AD125938FC800609C55 /* UITableView+XTEmptyDataSet.h */,
-				9C709AD225938FC800609C55 /* UITableView+XTEmptyDataSet.m */,
-				9C709AD825938FEE00609C55 /* UICollectionView+XTEmptyDataSet.h */,
-				9C709AD925938FEE00609C55 /* UICollectionView+XTEmptyDataSet.m */,
+				9C709ADF25962F8800609C55 /* UIScrollView+XTEmptyDataSet.h */,
+				9C709AE025962F8800609C55 /* UIScrollView+XTEmptyDataSet.m */,
 				09FD17FA349C41B04C3AE4C3114A693A /* Pod */,
 				484139D6E8822AF05ECC54EE9BEA9CBE /* Support Files */,
 			);
@@ -245,9 +239,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C709ADA25938FEE00609C55 /* UICollectionView+XTEmptyDataSet.h in Headers */,
 				47F15C6CA6A2D2B6610FB8D8EF96B085 /* UIView+XTEmptyDataSet.h in Headers */,
-				9C709AD325938FC800609C55 /* UITableView+XTEmptyDataSet.h in Headers */,
+				9C709AE125962F8800609C55 /* UIScrollView+XTEmptyDataSet.h in Headers */,
 				1F60D9149556D78A4FCCE92CB95AB97B /* XTEmptyDataSet-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,8 +396,7 @@
 			files = (
 				F20EACE38A9AC4F09662E5C803EF9E5A /* UIView+XTEmptyDataSet.m in Sources */,
 				D8C5AD296F724871360AC24155ABBA76 /* XTEmptyDataSet-dummy.m in Sources */,
-				9C709AD425938FC800609C55 /* UITableView+XTEmptyDataSet.m in Sources */,
-				9C709ADB25938FEE00609C55 /* UICollectionView+XTEmptyDataSet.m in Sources */,
+				9C709AE225962F8800609C55 /* UIScrollView+XTEmptyDataSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

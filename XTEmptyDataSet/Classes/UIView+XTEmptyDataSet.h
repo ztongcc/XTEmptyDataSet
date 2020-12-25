@@ -127,8 +127,11 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 @interface UIView (XTEmptyDataSet)
 
+// 全局设置
++ (void)xt_setupGlobalEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler UI_APPEARANCE_SELECTOR;
+// 单独设置
 - (void)xt_setupEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler;
-
+// 针对单个页面进行更新
 - (void)xt_updateEmptySetData:(XTEmptyDataSetType)type handler:(void (^)(XTDataSetConfig * config))handler;
 
 - (void)xt_display:(XTEmptyDataSetType)type;

@@ -397,6 +397,10 @@
     return dict;
 }
 
++ (void)xt_setupGlobalEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler UI_APPEARANCE_SELECTOR {
+    
+}
+
 - (void)xt_setupEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler {
     NSArray * types = @[@(XTEmptyDataSetTypeIdle), @(XTEmptyDataSetTypeLoading), @(XTEmptyDataSetTypeNoData),
                         @(XTEmptyDataSetTypeError),@(XTEmptyDataSetTypeCustom)];
