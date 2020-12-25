@@ -64,8 +64,8 @@
     return config;
 }
 // text default config
-- (CGFloat)textHorizontalMargin {
-    return _textHorizontalMargin > 0?_textHorizontalMargin:30;
+- (CGFloat)lableHorizontalMargin {
+    return _lableHorizontalMargin > 0?_lableHorizontalMargin:30;
 }
 
 // button default config
@@ -117,7 +117,7 @@
     return self;
 }
 
-- (void)reloadData {
+- (void)refreshSetData {
     if (_currentStyle != self.config.emptyStyle) {
         [self clearAllLayoutViews];
         [self layout];
@@ -176,8 +176,11 @@
 }
 
 - (void)xt_dataSetViewWillAppear {
-    if (self.config.emptyStyle == XTDataSetStyleIndicator) {
+    if (_config.emptyStyle == XTDataSetStyleIndicator) {
         [self.indicatorView startAnimating];
+    }
+    if (_config.xt_dataSetViewWillAppear) {
+        _config.xt_dataSetViewWillAppear(self, _config);
     }
 }
 
@@ -185,23 +188,40 @@
     if (self.config.emptyStyle == XTDataSetStyleIndicator) {
         [self.indicatorView stopAnimating];
     }
+    
+    if (_config.xt_dataSetViewWillDisappear) {
+        _config.xt_dataSetViewWillDisappear(self, _config);
+    }
 }
 
 #pragma mark -
 - (void)bindText {
-    self.descriptionLable.font = _config.textFont;
-    self.descriptionLable.textColor = _config.textColor;
-    self.descriptionLable.attributedText = _config.attributedText;
-    self.descriptionLable.text = _config.text;
+    self.descriptionLable.font = _config.lableTextFont;
+    self.descriptionLable.textColor = _config.lableTextColor;
+    self.descriptionLable.attributedText = _config.lableAttributedText;
+    self.descriptionLable.text = _config.lableText;
+    if (_config.xt_configLableAppearance) {
+        _config.xt_configLableAppearance(self.descriptionLable);
+    }
 }
 
 - (void)bindImage {
+    if (_config.xt_configImageViewAppearance) {
+        _config.xt_configImageViewAppearance(self.iconImageView);
+    }
     self.iconImageView.image = _config.image;
 }
 
 - (void)bindAction {
+    
     [self.actionButton setTitle:_config.buttonNormalTitle forState:UIControlStateNormal];
     [self.actionButton setTitle:_config.buttonHighlightedTitle forState:UIControlStateHighlighted];
+    if (_config.buttonNormalAttributedTitle) {
+        [self.actionButton setAttributedTitle:_config.buttonNormalAttributedTitle forState:UIControlStateNormal];
+    }
+    if (_config.buttonHighlightedAttributedTitle) {
+        [self.actionButton setAttributedTitle:_config.buttonHighlightedAttributedTitle forState:UIControlStateHighlighted];
+    }
     [self.actionButton setTitleColor:_config.buttonNormalTitleColor forState:UIControlStateNormal];
     [self.actionButton setTitleColor:_config.buttonHighlightedTitleColor forState:UIControlStateHighlighted];
     [self.actionButton setImage:_config.buttonNormalImage forState:UIControlStateNormal];
@@ -211,6 +231,9 @@
     self.actionButton.layer.borderWidth = _config.buttonBorderWidth;
     self.actionButton.layer.borderColor = _config.buttonBorderColor.CGColor;
     self.actionButton.layer.cornerRadius = _config.buttonCornerRadius;
+    if (_config.xt_configButtonAppearance) {
+        _config.xt_configButtonAppearance(self.actionButton);
+    }
 }
 
 - (void)bindIndicatorText {
@@ -241,7 +264,7 @@
 - (void)layoutText {
     [self addSubview:self.descriptionLable];
     [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.layoutStyle];
-    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.textHorizontalMargin];
+    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 }
 
 - (void)layoutImage {
@@ -264,7 +287,7 @@
     [self xt_addConstraint:self.indicatorView offset:_config.centerOffset layout:_config.layoutStyle];
     
     [self xt_addRelativeConstraint:self.descriptionLable toView:self.indicatorView offset:CGPointMake(0, _config.itemVerticalSpace)];
-    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.textHorizontalMargin];
+    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 }
 
 - (void)layoutImageText {
@@ -274,7 +297,7 @@
     [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.layoutStyle];
     
     [self xt_addRelativeConstraint:self.descriptionLable toView:self.iconImageView offset:CGPointMake(0, _config.itemVerticalSpace)];
-    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.textHorizontalMargin];
+    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 }
 
 - (void)layoutImageAction {
@@ -292,7 +315,7 @@
     [self addSubview:self.actionButton];
     
     [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.layoutStyle];
-    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.textHorizontalMargin];
+    [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 
     [self xt_addRelativeConstraint:self.actionButton toView:self.descriptionLable offset:CGPointMake(0, _config.itemVerticalSpace)];
     [self xt_addConstraint:self.actionButton horizontalPadding:_config.buttonHorizontalMargin];
@@ -346,6 +369,11 @@
         [_actionButton addTarget:self action:@selector(onTouchEvent) forControlEvents:UIControlEventTouchUpInside];
     }
     return _actionButton;
+}
+
+- (void)dealloc
+{
+    NSLog(@"%s", __func__);
 }
 @end
 
@@ -405,10 +433,10 @@
 }
 
 - (void)xt_display:(XTEmptyDataSetType)type {
-    [self xt_display:type reloadData:NO];
+    [self xt_display:type refreshDataSet:NO];
 }
 
-- (void)xt_display:(XTEmptyDataSetType)type reloadData:(BOOL)reload {
+- (void)xt_display:(XTEmptyDataSetType)type refreshDataSet:(BOOL)refresh {
     [self xt_hiddenEmptyDataSet];
     
     NSMutableDictionary * viewsDict = [self xt_emptyDataSetViewsDictionary];
@@ -423,8 +451,8 @@
         viewsDict[@(type)] = emptyView;
     }
     
-    if (reload) {
-        [emptyView reloadData];
+    if (refresh) {
+        [emptyView refreshSetData];
     }
 
     [emptyView xt_dataSetViewWillAppear];
@@ -439,6 +467,12 @@
         [obj xt_dataSetViewWillDisappear];
         [obj removeFromSuperview];
     }];
+}
+
+- (void)xt_clearEmptyDataSet {
+    [self xt_hiddenEmptyDataSet];
+    [[self xt_emptyDataSetViewsDictionary] removeAllObjects];
+    [[self xt_emptyDataSetConfigsDictionary] removeAllObjects];
 }
 
 @end

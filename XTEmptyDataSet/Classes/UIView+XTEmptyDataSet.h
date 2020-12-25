@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
     XTDataSetLayoutBotom,
 };
 
+@class XTDataSetView;
 @interface XTDataSetConfig : NSObject
 
 @property (nonatomic, assign) XTDataSetStyle emptyStyle;
@@ -47,31 +48,45 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 @property (nonatomic, strong) UIColor * backgroundColor;
 
 // text
-@property (nonatomic, assign) CGFloat textHorizontalMargin;
-@property (nonatomic, copy) NSString * text;
-@property (nonatomic, strong) UIColor * textColor;
-@property (nonatomic, strong) UIFont * textFont;
-@property (nonatomic, copy) NSAttributedString * attributedText;
+@property (nonatomic, assign) CGFloat lableHorizontalMargin;
+@property (nonatomic, strong) UIFont * lableTextFont;
+@property (nonatomic, strong) UIColor * lableTextColor;
+@property (nonatomic,   copy) NSString * lableText;
+@property (nonatomic,   copy) NSAttributedString * lableAttributedText;
+@property (nonatomic, copy) void (^xt_configLableAppearance)(UILabel * sender);
+
 
 // image
 @property (nonatomic, strong) UIImage * image;
 @property (nonatomic, assign) CGSize imageSize;
+@property (nonatomic, copy) void (^xt_configImageViewAppearance)(UIImageView * sender);
+
 
 // actionButton
 @property (nonatomic, assign) CGFloat    buttonHeight; // 默认 40
 @property (nonatomic, assign) CGFloat    buttonHorizontalMargin; // 默认 30
+
 @property (nonatomic,   copy) NSString * buttonNormalTitle; // 默认 点击重试
 @property (nonatomic,   copy) NSString * buttonHighlightedTitle;
+@property (nonatomic,   copy) NSAttributedString * buttonNormalAttributedTitle;
+@property (nonatomic,   copy) NSAttributedString * buttonHighlightedAttributedTitle;
+
 @property (nonatomic, strong) UIColor *  buttonNormalTitleColor;
 @property (nonatomic, strong) UIColor *  buttonHighlightedTitleColor;
+
 @property (nonatomic, strong) UIFont *   buttonNormalFont;
 @property (nonatomic, strong) UIFont *   buttonHighlightedFont;
+
 @property (nonatomic, strong) UIImage *  buttonNormalImage;
 @property (nonatomic, strong) UIImage *  buttonHighlightedImage;
+
 @property (nonatomic, strong) UIColor *  buttonBackgroundColor;
 @property (nonatomic, assign) CGFloat    buttonCornerRadius;
 @property (nonatomic, assign) CGFloat    buttonBorderWidth;
 @property (nonatomic, strong) UIColor *  buttonBorderColor;
+
+// 自定义
+@property (nonatomic, copy) void (^xt_configButtonAppearance)(UIButton * sender);
 @property (nonatomic, copy) dispatch_block_t buttonTouchHandler;
 
 
@@ -85,6 +100,13 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 // 元素之间纵轴间距 默认 30
 @property (nonatomic, assign)CGFloat itemVerticalSpace;
 
+
+// 生命周期
+@property (nonatomic, copy)void (^xt_dataSetViewWillAppear)(XTDataSetView * setView, XTDataSetConfig * config);
+@property (nonatomic, copy)void (^xt_dataSetViewWillDisappear)(XTDataSetView * setView, XTDataSetConfig * config);
+
+
+
 + (XTDataSetConfig *)blankIdle;
 
 @end
@@ -94,14 +116,9 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 @interface XTDataSetView : UIView
 
-
 + (XTDataSetView *)dataSetViewWithConfig:(XTDataSetConfig *)config;
 
-- (void)reloadData;
-
-
-- (void)xt_dataSetViewWillAppear;
-- (void)xt_dataSetViewWillDisappear;
+- (void)refreshSetData;
 
 @end
 
@@ -116,9 +133,10 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 - (void)xt_display:(XTEmptyDataSetType)type;
 
-- (void)xt_display:(XTEmptyDataSetType)type reloadData:(BOOL)reload;
+- (void)xt_display:(XTEmptyDataSetType)type refreshDataSet:(BOOL)refresh;
 
 - (void)xt_hiddenEmptyDataSet;
+- (void)xt_clearEmptyDataSet;
 
 @end
 
