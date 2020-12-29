@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy)NSInteger (^xt_itemCountHandler)(void);
 
 - (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type;
-
 - (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate;
 
 @end
@@ -27,7 +26,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UITableView (XTEmptyDataSet)
 
 - (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type;
-
 - (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate;
 
 @end
@@ -37,7 +35,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UICollectionView (XTEmptyDataSet)
 
 - (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type;
-
 - (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate;
 
 @end

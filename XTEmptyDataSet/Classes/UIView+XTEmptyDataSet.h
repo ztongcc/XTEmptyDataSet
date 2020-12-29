@@ -99,6 +99,8 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 @property (nonatomic, assign)CGPoint centerOffset;
 // 元素之间纵轴间距 默认 30
 @property (nonatomic, assign)CGFloat itemVerticalSpace;
+// 边距
+@property (nonatomic, assign)UIEdgeInsets edgeMarginInsets;
 
 
 // 生命周期
@@ -108,6 +110,8 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 
 + (XTDataSetConfig *)blankIdle;
+
+- (void)mergeDataFrom:(XTDataSetConfig *)config;
 
 @end
 
@@ -128,7 +132,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 @interface UIView (XTEmptyDataSet)
 
 // 全局设置
-+ (void)xt_setupGlobalEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler UI_APPEARANCE_SELECTOR;
++ (void)xt_setupGlobalEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler;
 // 单独设置
 - (void)xt_setupEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler;
 // 针对单个页面进行更新
@@ -136,7 +140,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 - (void)xt_display:(XTEmptyDataSetType)type;
 
-- (void)xt_display:(XTEmptyDataSetType)type refreshDataSet:(BOOL)refresh;
+- (void)xt_display:(XTEmptyDataSetType)type refreshSetData:(BOOL)refresh;
 
 - (void)xt_hiddenEmptyDataSet;
 - (void)xt_clearEmptyDataSet;

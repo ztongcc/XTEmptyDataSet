@@ -8,29 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		0C1C7B4531F6E74DA070847D71189418 /* Pods-XTEmptyDataSet_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EAB7FE5ADF738B314A85B27A77F55E4F /* Pods-XTEmptyDataSet_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F60D9149556D78A4FCCE92CB95AB97B /* XTEmptyDataSet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EC98E3E8C733FF8C427A7E22CE89DF /* XTEmptyDataSet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		47F15C6CA6A2D2B6610FB8D8EF96B085 /* UIView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6272FA0C4F2E8E8614036E2DF48A31 /* UIView+XTEmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F93F605B0C8853B16487F7ADD696052 /* UIScrollView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB3447517D56329777F960FCAC57C91 /* UIScrollView+XTEmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FAA902198582E90B5C1B6FD90E59E84 /* XTEmptyDataSet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD356209C9A52917D07CC1026559CDF /* XTEmptyDataSet-dummy.m */; };
+		5BBA5F3C23BA2BC0370A65B7DE70B4FF /* XTEmptyDataSet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B6C8BE5EB74498495C8DC1B6286FD73 /* XTEmptyDataSet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D5E225A7FB4C9FB14356D8138D3989A /* Pods-XTEmptyDataSet_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F9C757F15A19588D329CE509238CB /* Pods-XTEmptyDataSet_Tests-dummy.m */; };
-		9C709AE125962F8800609C55 /* UIScrollView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C709ADF25962F8800609C55 /* UIScrollView+XTEmptyDataSet.h */; };
-		9C709AE225962F8800609C55 /* UIScrollView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C709AE025962F8800609C55 /* UIScrollView+XTEmptyDataSet.m */; };
-		AE75A3B456C59D9077CA5BC07BFCB9E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		B500913877ED4E8DBE2CBCEE3C570565 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BF45ACE81FE6C49AD62C6BD9C5850D55 /* Pods-XTEmptyDataSet_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DB385148FBDFAF5B4A5C45A67878F754 /* Pods-XTEmptyDataSet_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C52967D5371AE88C31CE4DA4BC3913AE /* UIView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D26524C44A507902BB48508D5BAA53E1 /* UIView+XTEmptyDataSet.m */; };
+		C6055671EBA5B3885C1EBBF5E881EE4B /* UIScrollView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1C20F8224BEAE8EA3A50C5BABF3B7F /* UIScrollView+XTEmptyDataSet.m */; };
 		C8D033C94EFFFC4C1231044F1BB6FFA3 /* Pods-XTEmptyDataSet_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1243A06B712E759FB5FE6D83F383CF /* Pods-XTEmptyDataSet_Example-dummy.m */; };
-		D8C5AD296F724871360AC24155ABBA76 /* XTEmptyDataSet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8595021A817B87F764E359106415082 /* XTEmptyDataSet-dummy.m */; };
+		D0FC7C51A16E96C234D571058A306DC8 /* UIView+XTEmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 8933A396C568D119924F9A1731432FCA /* UIView+XTEmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E89208D5128AB4F3154AA467DE05BCAC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		EEE897BBFA1AF26B59D079E477ED4BE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		F20EACE38A9AC4F09662E5C803EF9E5A /* UIView+XTEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8F2E65DACC56D56A6A381FF255F801 /* UIView+XTEmptyDataSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C0992246510E11EAF4C62CCCF80B002C /* PBXContainerItemProxy */ = {
+		3EE1BAD4641E7FF65FF3350832190145 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 461E2A846EF6DCB260412FC1D98743D4;
 			remoteInfo = XTEmptyDataSet;
 		};
-		D76171FCAEBAF762006F07FC70091DA1 /* PBXContainerItemProxy */ = {
+		C82A323C3307B4521009FF6F27E2CFEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -41,57 +41,57 @@
 
 /* Begin PBXFileReference section */
 		0666895DC0A2EF2D6D2DDCE27F73C5DD /* Pods-XTEmptyDataSet_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XTEmptyDataSet_Example.modulemap"; sourceTree = "<group>"; };
-		1A02512E343C407DB6CE4A893F6B6E72 /* XTEmptyDataSet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XTEmptyDataSet-Info.plist"; sourceTree = "<group>"; };
+		1174674ED8D984A78B5FE52C00BE4170 /* XTEmptyDataSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTEmptyDataSet.release.xcconfig; sourceTree = "<group>"; };
 		1C00998707C678478C0B4FAE4D8BCF1C /* Pods-XTEmptyDataSet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTEmptyDataSet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		1D6A05E01975385CBED0EDB2865D17B2 /* Pods-XTEmptyDataSet_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XTEmptyDataSet_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		24A28AEE617B78DA5A52CF4A7ACC8EC0 /* XTEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XTEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A28AEE617B78DA5A52CF4A7ACC8EC0 /* XTEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XTEmptyDataSet.framework; path = XTEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26224780E964B52FCEF4078249BAFE6C /* Pods-XTEmptyDataSet_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTEmptyDataSet_Tests-Info.plist"; sourceTree = "<group>"; };
+		27DA16966380799E73B0CD7F4275A522 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		2B1243A06B712E759FB5FE6D83F383CF /* Pods-XTEmptyDataSet_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XTEmptyDataSet_Example-dummy.m"; sourceTree = "<group>"; };
-		40F1C5C181B09F6E9923817B7785BEC2 /* Pods_XTEmptyDataSet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTEmptyDataSet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6C8BE5EB74498495C8DC1B6286FD73 /* XTEmptyDataSet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTEmptyDataSet-umbrella.h"; sourceTree = "<group>"; };
+		32A00D137DD89A57C3767A1359EC6D3A /* XTEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
+		40F1C5C181B09F6E9923817B7785BEC2 /* Pods_XTEmptyDataSet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XTEmptyDataSet_Tests.framework; path = "Pods-XTEmptyDataSet_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4617088E359FCBE49C00B2929F809685 /* Pods-XTEmptyDataSet_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XTEmptyDataSet_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4AA64BB86D691C8B4519438717174644 /* XTEmptyDataSet.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = XTEmptyDataSet.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		4BC510343B426D34A62DFB61CF86F8B9 /* Pods_XTEmptyDataSet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTEmptyDataSet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E8F2E65DACC56D56A6A381FF255F801 /* UIView+XTEmptyDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UIView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
-		598CAF6D55A366D4CFE67DE5C1C7290F /* XTEmptyDataSet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XTEmptyDataSet.modulemap; sourceTree = "<group>"; };
+		4BC510343B426D34A62DFB61CF86F8B9 /* Pods_XTEmptyDataSet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_XTEmptyDataSet_Example.framework; path = "Pods-XTEmptyDataSet_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6923B80DC25250EAC601F6EC18E09B4A /* Pods-XTEmptyDataSet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTEmptyDataSet_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6D4F9C757F15A19588D329CE509238CB /* Pods-XTEmptyDataSet_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XTEmptyDataSet_Tests-dummy.m"; sourceTree = "<group>"; };
 		6D912C24B57C3FFB290DA9C63308215A /* Pods-XTEmptyDataSet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTEmptyDataSet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		843E6B558EA5122EBB1029ED7EEF3953 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		88A9B808D2380523DB8AE22D42DF86CC /* XTEmptyDataSet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTEmptyDataSet.debug.xcconfig; sourceTree = "<group>"; };
-		8AC4EFE35D9C2B958C78FA6BA1C88127 /* XTEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
+		78A04C5B3C5B9A15F077EE8C616272C5 /* XTEmptyDataSet.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = XTEmptyDataSet.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8122F93B7CA3D7313232D4643661CD9B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8933A396C568D119924F9A1731432FCA /* UIView+XTEmptyDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UIView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
+		8DD356209C9A52917D07CC1026559CDF /* XTEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XTEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
 		912383C0C45202A1CDBCCE69E53F706C /* Pods-XTEmptyDataSet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTEmptyDataSet_Example.release.xcconfig"; sourceTree = "<group>"; };
 		93D4922CA7F4C509AD3CA88D5B8D72BE /* Pods-XTEmptyDataSet_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTEmptyDataSet_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		9C709ADF25962F8800609C55 /* UIScrollView+XTEmptyDataSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UIScrollView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
-		9C709AE025962F8800609C55 /* UIScrollView+XTEmptyDataSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UIScrollView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
-		9D6272FA0C4F2E8E8614036E2DF48A31 /* UIView+XTEmptyDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UIView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A703E5341429D19C917450F2D60AF424 /* XTEmptyDataSet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTEmptyDataSet.release.xcconfig; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DB3447517D56329777F960FCAC57C91 /* UIScrollView+XTEmptyDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+XTEmptyDataSet.h"; path = "XTEmptyDataSet/Classes/UIScrollView+XTEmptyDataSet.h"; sourceTree = "<group>"; };
+		AE8240C141517C9E85E7A30D11D52CF7 /* XTEmptyDataSet-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XTEmptyDataSet-Info.plist"; sourceTree = "<group>"; };
 		B00ECE264C13884B283F4E3B4579A527 /* Pods-XTEmptyDataSet_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTEmptyDataSet_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C51879F3E909E67FD410CF840B81B49C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C8B6FAA1314D338C807268CED35346A2 /* Pods-XTEmptyDataSet_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XTEmptyDataSet_Tests.modulemap"; sourceTree = "<group>"; };
 		D10C8988BC15BDF202B8663DE118CE09 /* Pods-XTEmptyDataSet_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XTEmptyDataSet_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D26524C44A507902BB48508D5BAA53E1 /* UIView+XTEmptyDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UIView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
+		D6CC285B61B30CCBC0562A58E46F78CF /* XTEmptyDataSet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XTEmptyDataSet.modulemap; sourceTree = "<group>"; };
 		DB385148FBDFAF5B4A5C45A67878F754 /* Pods-XTEmptyDataSet_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XTEmptyDataSet_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E39148EA0D7B949E8A0756E8782452A5 /* Pods-XTEmptyDataSet_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTEmptyDataSet_Example-Info.plist"; sourceTree = "<group>"; };
-		E8595021A817B87F764E359106415082 /* XTEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XTEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
 		EAB7FE5ADF738B314A85B27A77F55E4F /* Pods-XTEmptyDataSet_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XTEmptyDataSet_Example-umbrella.h"; sourceTree = "<group>"; };
-		F6EC98E3E8C733FF8C427A7E22CE89DF /* XTEmptyDataSet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTEmptyDataSet-umbrella.h"; sourceTree = "<group>"; };
+		FB1C20F8224BEAE8EA3A50C5BABF3B7F /* UIScrollView+XTEmptyDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+XTEmptyDataSet.m"; path = "XTEmptyDataSet/Classes/UIScrollView+XTEmptyDataSet.m"; sourceTree = "<group>"; };
+		FE0ABF195542B18BC4A28F5666FAB932 /* XTEmptyDataSet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTEmptyDataSet.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		259D82436571DC7FDD9629200C273755 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B500913877ED4E8DBE2CBCEE3C570565 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7621C4381AC27A57E451EF788778C0E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E89208D5128AB4F3154AA467DE05BCAC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7834F4A83C043F44193B25265D2C5EC0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE75A3B456C59D9077CA5BC07BFCB9E0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,14 +106,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09FD17FA349C41B04C3AE4C3114A693A /* Pod */ = {
+		1DAD420DEA7E4B8FA5C65268B106C707 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				843E6B558EA5122EBB1029ED7EEF3953 /* LICENSE */,
-				C51879F3E909E67FD410CF840B81B49C /* README.md */,
-				4AA64BB86D691C8B4519438717174644 /* XTEmptyDataSet.podspec */,
+				2D56837AFDA751E0D7F2555F76C3339D /* XTEmptyDataSet */,
 			);
-			name = Pod;
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		2D56837AFDA751E0D7F2555F76C3339D /* XTEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				9DB3447517D56329777F960FCAC57C91 /* UIScrollView+XTEmptyDataSet.h */,
+				FB1C20F8224BEAE8EA3A50C5BABF3B7F /* UIScrollView+XTEmptyDataSet.m */,
+				8933A396C568D119924F9A1731432FCA /* UIView+XTEmptyDataSet.h */,
+				D26524C44A507902BB48508D5BAA53E1 /* UIView+XTEmptyDataSet.m */,
+				C24A7DBF20D141F413A33EB9F94E2A05 /* Pod */,
+				F431748D602F9EDE3A423B4E4B842E62 /* Support Files */,
+			);
+			name = XTEmptyDataSet;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		454E85847A8B922B9DE373A353F0065E /* Pods-XTEmptyDataSet_Tests */ = {
@@ -130,21 +142,6 @@
 			);
 			name = "Pods-XTEmptyDataSet_Tests";
 			path = "Target Support Files/Pods-XTEmptyDataSet_Tests";
-			sourceTree = "<group>";
-		};
-		484139D6E8822AF05ECC54EE9BEA9CBE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				598CAF6D55A366D4CFE67DE5C1C7290F /* XTEmptyDataSet.modulemap */,
-				E8595021A817B87F764E359106415082 /* XTEmptyDataSet-dummy.m */,
-				1A02512E343C407DB6CE4A893F6B6E72 /* XTEmptyDataSet-Info.plist */,
-				8AC4EFE35D9C2B958C78FA6BA1C88127 /* XTEmptyDataSet-prefix.pch */,
-				F6EC98E3E8C733FF8C427A7E22CE89DF /* XTEmptyDataSet-umbrella.h */,
-				88A9B808D2380523DB8AE22D42DF86CC /* XTEmptyDataSet.debug.xcconfig */,
-				A703E5341429D19C917450F2D60AF424 /* XTEmptyDataSet.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/XTEmptyDataSet";
 			sourceTree = "<group>";
 		};
 		5010D19CEA56A003702AA633FC28726B /* Pods-XTEmptyDataSet_Example */ = {
@@ -191,25 +188,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9549275D29CCFE3B3D7A9B27C8AD0B67 /* XTEmptyDataSet */ = {
+		C24A7DBF20D141F413A33EB9F94E2A05 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				9D6272FA0C4F2E8E8614036E2DF48A31 /* UIView+XTEmptyDataSet.h */,
-				4E8F2E65DACC56D56A6A381FF255F801 /* UIView+XTEmptyDataSet.m */,
-				9C709ADF25962F8800609C55 /* UIScrollView+XTEmptyDataSet.h */,
-				9C709AE025962F8800609C55 /* UIScrollView+XTEmptyDataSet.m */,
-				09FD17FA349C41B04C3AE4C3114A693A /* Pod */,
-				484139D6E8822AF05ECC54EE9BEA9CBE /* Support Files */,
+				27DA16966380799E73B0CD7F4275A522 /* LICENSE */,
+				8122F93B7CA3D7313232D4643661CD9B /* README.md */,
+				78A04C5B3C5B9A15F077EE8C616272C5 /* XTEmptyDataSet.podspec */,
 			);
-			name = XTEmptyDataSet;
-			path = ../..;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D2BB58A98DC7FD03EDAA7F90386B23FF /* Development Pods */,
+				1DAD420DEA7E4B8FA5C65268B106C707 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				7336AAD51C1499A6EA0FDA07AF4F34EC /* Products */,
 				6D5F54B202D17858676F0B717499062F /* Targets Support Files */,
@@ -224,24 +217,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D2BB58A98DC7FD03EDAA7F90386B23FF /* Development Pods */ = {
+		F431748D602F9EDE3A423B4E4B842E62 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9549275D29CCFE3B3D7A9B27C8AD0B67 /* XTEmptyDataSet */,
+				D6CC285B61B30CCBC0562A58E46F78CF /* XTEmptyDataSet.modulemap */,
+				8DD356209C9A52917D07CC1026559CDF /* XTEmptyDataSet-dummy.m */,
+				AE8240C141517C9E85E7A30D11D52CF7 /* XTEmptyDataSet-Info.plist */,
+				32A00D137DD89A57C3767A1359EC6D3A /* XTEmptyDataSet-prefix.pch */,
+				2B6C8BE5EB74498495C8DC1B6286FD73 /* XTEmptyDataSet-umbrella.h */,
+				FE0ABF195542B18BC4A28F5666FAB932 /* XTEmptyDataSet.debug.xcconfig */,
+				1174674ED8D984A78B5FE52C00BE4170 /* XTEmptyDataSet.release.xcconfig */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/XTEmptyDataSet";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3E8CE4B6C28C593D68E96ACC87138DCA /* Headers */ = {
+		42B946A3C6F247A9EB70045E14603AB6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F15C6CA6A2D2B6610FB8D8EF96B085 /* UIView+XTEmptyDataSet.h in Headers */,
-				9C709AE125962F8800609C55 /* UIScrollView+XTEmptyDataSet.h in Headers */,
-				1F60D9149556D78A4FCCE92CB95AB97B /* XTEmptyDataSet-umbrella.h in Headers */,
+				2F93F605B0C8853B16487F7ADD696052 /* UIScrollView+XTEmptyDataSet.h in Headers */,
+				D0FC7C51A16E96C234D571058A306DC8 /* UIView+XTEmptyDataSet.h in Headers */,
+				5BBA5F3C23BA2BC0370A65B7DE70B4FF /* XTEmptyDataSet-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,12 +266,12 @@
 /* Begin PBXNativeTarget section */
 		461E2A846EF6DCB260412FC1D98743D4 /* XTEmptyDataSet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 630ABDAD846D97A23C0B9086E3C120BF /* Build configuration list for PBXNativeTarget "XTEmptyDataSet" */;
+			buildConfigurationList = 7A8CE60FC5461EC1F63B946D155DBC1D /* Build configuration list for PBXNativeTarget "XTEmptyDataSet" */;
 			buildPhases = (
-				3E8CE4B6C28C593D68E96ACC87138DCA /* Headers */,
-				CA8828691B7CB7D620C602A9F307234D /* Sources */,
-				7834F4A83C043F44193B25265D2C5EC0 /* Frameworks */,
-				B1B7E96D9078964238891F7CCFAC96D4 /* Resources */,
+				42B946A3C6F247A9EB70045E14603AB6 /* Headers */,
+				E38446FBABB33A1DFF51E39B7A8CC843 /* Sources */,
+				259D82436571DC7FDD9629200C273755 /* Frameworks */,
+				896A3D02FC3B908110FF52A15E2C94B9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -294,7 +294,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				6C4D3F82DE13B4E7432305A250B44CDA /* PBXTargetDependency */,
+				F171A4AB3BDD4A96C203144B9CCF6D94 /* PBXTargetDependency */,
 			);
 			name = "Pods-XTEmptyDataSet_Example";
 			productName = "Pods-XTEmptyDataSet_Example";
@@ -313,7 +313,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B454AF67B28BA5CB81B610A1516B6228 /* PBXTargetDependency */,
+				E5B181E6C267B4D851D2F16FF99821B4 /* PBXTargetDependency */,
 			);
 			name = "Pods-XTEmptyDataSet_Tests";
 			productName = "Pods-XTEmptyDataSet_Tests";
@@ -357,7 +357,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1B7E96D9078964238891F7CCFAC96D4 /* Resources */ = {
+		896A3D02FC3B908110FF52A15E2C94B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -390,34 +390,64 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA8828691B7CB7D620C602A9F307234D /* Sources */ = {
+		E38446FBABB33A1DFF51E39B7A8CC843 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F20EACE38A9AC4F09662E5C803EF9E5A /* UIView+XTEmptyDataSet.m in Sources */,
-				D8C5AD296F724871360AC24155ABBA76 /* XTEmptyDataSet-dummy.m in Sources */,
-				9C709AE225962F8800609C55 /* UIScrollView+XTEmptyDataSet.m in Sources */,
+				C6055671EBA5B3885C1EBBF5E881EE4B /* UIScrollView+XTEmptyDataSet.m in Sources */,
+				C52967D5371AE88C31CE4DA4BC3913AE /* UIView+XTEmptyDataSet.m in Sources */,
+				2FAA902198582E90B5C1B6FD90E59E84 /* XTEmptyDataSet-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6C4D3F82DE13B4E7432305A250B44CDA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = XTEmptyDataSet;
-			target = 461E2A846EF6DCB260412FC1D98743D4 /* XTEmptyDataSet */;
-			targetProxy = C0992246510E11EAF4C62CCCF80B002C /* PBXContainerItemProxy */;
-		};
-		B454AF67B28BA5CB81B610A1516B6228 /* PBXTargetDependency */ = {
+		E5B181E6C267B4D851D2F16FF99821B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-XTEmptyDataSet_Example";
 			target = 4F6A4215089B0E001FA1F6CE176F5B02 /* Pods-XTEmptyDataSet_Example */;
-			targetProxy = D76171FCAEBAF762006F07FC70091DA1 /* PBXContainerItemProxy */;
+			targetProxy = C82A323C3307B4521009FF6F27E2CFEF /* PBXContainerItemProxy */;
+		};
+		F171A4AB3BDD4A96C203144B9CCF6D94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XTEmptyDataSet;
+			target = 461E2A846EF6DCB260412FC1D98743D4 /* XTEmptyDataSet */;
+			targetProxy = 3EE1BAD4641E7FF65FF3350832190145 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		09A405957BFA46461FEBDE3D97B940A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0ABF195542B18BC4A28F5666FAB932 /* XTEmptyDataSet.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XTEmptyDataSet/XTEmptyDataSet-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XTEmptyDataSet/XTEmptyDataSet-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/XTEmptyDataSet/XTEmptyDataSet.modulemap";
+				PRODUCT_MODULE_NAME = XTEmptyDataSet;
+				PRODUCT_NAME = XTEmptyDataSet;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		24228AF9C40DC53B01F041C48F509182 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 912383C0C45202A1CDBCCE69E53F706C /* Pods-XTEmptyDataSet_Example.release.xcconfig */;
@@ -451,6 +481,72 @@
 			};
 			name = Release;
 		};
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
 		3079AF72E90FCB6126D07529ABA57E5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6923B80DC25250EAC601F6EC18E09B4A /* Pods-XTEmptyDataSet_Tests.release.xcconfig */;
@@ -477,37 +573,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		754343FD19B3F56CDE3CD1306F8B2305 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A703E5341429D19C917450F2D60AF424 /* XTEmptyDataSet.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/XTEmptyDataSet/XTEmptyDataSet-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/XTEmptyDataSet/XTEmptyDataSet-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/XTEmptyDataSet/XTEmptyDataSet.modulemap";
-				PRODUCT_MODULE_NAME = XTEmptyDataSet;
-				PRODUCT_NAME = XTEmptyDataSet;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -579,10 +644,11 @@
 			};
 			name = Debug;
 		};
-		C14E932D4C3EFCC589F7DEABCEC18F22 /* Release */ = {
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -633,80 +699,16 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		EF3BAAA889B17377BE8F3254633FA0A7 /* Debug */ = {
+		D4D77337C7A04B0BB60A86F2D3C94787 /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_DEBUG=1",
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		FD75F49374A4CFAB828A251EAC5F26D1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88A9B808D2380523DB8AE22D42DF86CC /* XTEmptyDataSet.debug.xcconfig */;
+			baseConfigurationReference = 1174674ED8D984A78B5FE52C00BE4170 /* XTEmptyDataSet.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -729,10 +731,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -740,17 +743,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF3BAAA889B17377BE8F3254633FA0A7 /* Debug */,
-				C14E932D4C3EFCC589F7DEABCEC18F22 /* Release */,
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		630ABDAD846D97A23C0B9086E3C120BF /* Build configuration list for PBXNativeTarget "XTEmptyDataSet" */ = {
+		7A8CE60FC5461EC1F63B946D155DBC1D /* Build configuration list for PBXNativeTarget "XTEmptyDataSet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FD75F49374A4CFAB828A251EAC5F26D1 /* Debug */,
-				754343FD19B3F56CDE3CD1306F8B2305 /* Release */,
+				09A405957BFA46461FEBDE3D97B940A1 /* Debug */,
+				D4D77337C7A04B0BB60A86F2D3C94787 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

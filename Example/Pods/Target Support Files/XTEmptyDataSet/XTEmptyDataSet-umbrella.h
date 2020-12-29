@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "UIScrollView+XTEmptyDataSet.h"
 #import "UIView+XTEmptyDataSet.h"
 
 FOUNDATION_EXPORT double XTEmptyDataSetVersionNumber;

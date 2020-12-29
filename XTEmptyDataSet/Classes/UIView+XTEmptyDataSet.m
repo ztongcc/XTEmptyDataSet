@@ -8,10 +8,12 @@
 #import "UIView+XTEmptyDataSet.h"
 #import <objc/runtime.h>
 
+
+static NSMutableDictionary * xt_globalConfigs;
+
+
 @interface UIView (XTEmptyViewLayoutConstraint)
-
 @end
-
 
 @implementation UIView (XTEmptyViewLayoutConstraint)
 
@@ -52,6 +54,16 @@
     [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:edgeInset.right]];
 }
 
+- (void)xt_addConstraintToScrollView:(UIView *)item edgeInset:(UIEdgeInsets)edgeInset {
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:(edgeInset.top - edgeInset.bottom)/2]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:(edgeInset.left - edgeInset.right)/2]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1 constant:-(edgeInset.left + edgeInset.right)]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:item attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight multiplier:1 constant:-(edgeInset.top + edgeInset.bottom)]];
+}
+
+
 @end
 
 
@@ -63,6 +75,50 @@
     config.emptyStyle = XTDataSetStyleNone;
     return config;
 }
+
+
+- (void)mergeDataFrom:(XTDataSetConfig *)config {
+    self.emptyStyle = config.emptyStyle;
+    self.layoutStyle = config.layoutStyle;
+    self.backgroundColor = config.backgroundColor;
+    
+    self.lableText = config.lableText;
+    self.lableTextFont = config.lableTextFont;
+    self.lableTextColor = config.lableTextColor;
+    self.lableAttributedText = config.lableAttributedText;
+    self.lableHorizontalMargin = config.lableHorizontalMargin;
+    self.xt_configLableAppearance = config.xt_configLableAppearance;
+    
+    self.buttonHeight = config.buttonHeight;
+    self.buttonBorderColor = config.buttonBorderColor;
+    self.buttonCornerRadius = config.buttonCornerRadius;
+    self.buttonBorderWidth = config.buttonBorderWidth;
+    self.buttonBackgroundColor = config.buttonBackgroundColor;
+
+    self.buttonNormalFont = config.buttonNormalFont;
+    self.buttonNormalImage = config.buttonNormalImage;
+    self.buttonNormalTitle = config.buttonNormalTitle;
+    self.buttonNormalTitleColor = config.buttonNormalTitleColor;
+    self.buttonNormalAttributedTitle = config.buttonNormalAttributedTitle;
+    self.buttonHighlightedFont = config.buttonHighlightedFont;
+    self.buttonHighlightedImage = config.buttonHighlightedImage;
+    self.buttonHighlightedTitle = config.buttonHighlightedTitle;
+    self.buttonHighlightedTitleColor = config.buttonHighlightedTitleColor;
+    self.buttonHighlightedAttributedTitle = config.buttonHighlightedAttributedTitle;
+    self.xt_configButtonAppearance = config.xt_configButtonAppearance;
+    
+    self.image = config.image;
+    self.imageSize = config.imageSize;
+    self.xt_configImageViewAppearance = config.xt_configImageViewAppearance;
+    
+    self.customView = config.customView;
+    self.customViewSize = config.customViewSize;
+    
+    self.centerOffset = config.centerOffset;
+    self.itemVerticalSpace = config.itemVerticalSpace;
+    self.edgeMarginInsets = config.edgeMarginInsets;
+}
+
 // text default config
 - (CGFloat)lableHorizontalMargin {
     return _lableHorizontalMargin > 0?_lableHorizontalMargin:30;
@@ -109,8 +165,9 @@
 - (id)initWithFrame:(CGRect)frame config:(XTDataSetConfig *)config {
     self = [super initWithFrame:frame];
     if (self) {
-        self.config = config;
+        _config = config;
         _currentStyle = config.emptyStyle;
+        self.translatesAutoresizingMaskIntoConstraints = NO;
         [self layout];
         [self bindData];
     }
@@ -397,13 +454,30 @@
     return dict;
 }
 
-+ (void)xt_setupGlobalEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler UI_APPEARANCE_SELECTOR {
-    
++ (NSArray *)xt_defaultAllSetTypes {
+    return @[@(XTEmptyDataSetTypeIdle),@(XTEmptyDataSetTypeLoading), @(XTEmptyDataSetTypeNoData),
+             @(XTEmptyDataSetTypeError),@(XTEmptyDataSetTypeCustom)];
+}
+
++ (void)xt_setupGlobalEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        xt_globalConfigs = [NSMutableDictionary dictionaryWithCapacity:1];
+        NSArray * types = [self xt_defaultAllSetTypes];
+        __block NSMutableDictionary * tmp = [NSMutableDictionary dictionaryWithCapacity:1];
+        [types enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            XTDataSetConfig * config = [[XTDataSetConfig alloc] init];
+            if (handler) {
+                handler([obj integerValue], config);
+            }
+            [tmp setObject:config forKey:obj];
+        }];
+        [xt_globalConfigs addEntriesFromDictionary:tmp];
+    });
 }
 
 - (void)xt_setupEmptySetData:(void (^)(XTEmptyDataSetType type, XTDataSetConfig * config))handler {
-    NSArray * types = @[@(XTEmptyDataSetTypeIdle), @(XTEmptyDataSetTypeLoading), @(XTEmptyDataSetTypeNoData),
-                        @(XTEmptyDataSetTypeError),@(XTEmptyDataSetTypeCustom)];
+    NSArray * types = [[self class] xt_defaultAllSetTypes];
     __block NSMutableDictionary * tmp = [NSMutableDictionary dictionaryWithCapacity:1];
     [types enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         XTDataSetConfig * config = [[XTDataSetConfig alloc] init];
@@ -417,40 +491,58 @@
     [configs addEntriesFromDictionary:tmp];
 }
 
+- (XTDataSetConfig *)xt_configOfEmptyDataSetViewWithType:(XTEmptyDataSetType)type {
+    NSMutableDictionary * configs = [self xt_emptyDataSetConfigsDictionary];
+    XTDataSetConfig * config = configs[@(type)];
+    if (!config) {
+        if (xt_globalConfigs) {
+            config = xt_globalConfigs[@(type)];
+        }
+    }
+    
+    if (!config) {
+        config = [XTDataSetConfig blankIdle];
+        configs[@(type)] = config;
+    }
+    return config;
+}
+
 - (void)xt_updateEmptySetData:(XTEmptyDataSetType)type handler:(void (^)(XTDataSetConfig * config))handler {
     NSMutableDictionary * configs = [self xt_emptyDataSetConfigsDictionary];
-    __block XTDataSetConfig * config;
-    [configs enumerateKeysAndObjectsUsingBlock:^(NSNumber * _Nonnull key, XTDataSetConfig *_Nonnull obj, BOOL * _Nonnull stop) {
-        if ([key integerValue] == type) {
-            config = obj;
-        }
-    }];
+    XTDataSetConfig * config = configs[@(type)];
     
     if (config == nil) {
-        config = [[XTDataSetConfig alloc] init];
+        config = [XTDataSetConfig blankIdle];
         [configs setObject:config forKey:@(type)];
+    }
+    
+    if (xt_globalConfigs && xt_globalConfigs[@(type)]) {
+        [config mergeDataFrom:xt_globalConfigs[@(type)]];
     }
     
     if (handler) {
         handler(config);
     }
+    
+    // 更新 dataSetView 显示的数据
+    NSMutableDictionary * viewsDict = [self xt_emptyDataSetViewsDictionary];
+    XTDataSetView * emptyView = (XTDataSetView *)viewsDict[@(type)];
+    if (emptyView) {
+        [emptyView refreshSetData];
+    }
 }
 
 - (void)xt_display:(XTEmptyDataSetType)type {
-    [self xt_display:type refreshDataSet:NO];
+    [self xt_display:type refreshSetData:NO];
 }
 
-- (void)xt_display:(XTEmptyDataSetType)type refreshDataSet:(BOOL)refresh {
+- (void)xt_display:(XTEmptyDataSetType)type refreshSetData:(BOOL)refresh {
     [self xt_hiddenEmptyDataSet];
     
     NSMutableDictionary * viewsDict = [self xt_emptyDataSetViewsDictionary];
+    XTDataSetConfig * config = [self xt_configOfEmptyDataSetViewWithType:type];
     XTDataSetView * emptyView = (XTDataSetView *)viewsDict[@(type)];
     if (!emptyView) {
-        NSDictionary * styles = [self xt_emptyDataSetConfigsDictionary];
-        XTDataSetConfig * config = styles[@(type)];
-        if (!config) {
-            config = [XTDataSetConfig blankIdle];
-        }
         emptyView = [XTDataSetView dataSetViewWithConfig:config];
         viewsDict[@(type)] = emptyView;
     }
@@ -462,7 +554,11 @@
     [emptyView xt_dataSetViewWillAppear];
     
     [self addSubview:emptyView];
-    [self xt_addConstraint:emptyView edgeInset:UIEdgeInsetsZero];
+    if ([self isKindOfClass:[UIScrollView class]]) {
+        [self xt_addConstraintToScrollView:emptyView edgeInset:config.edgeMarginInsets];
+    }else {
+        [self xt_addConstraint:emptyView edgeInset:config.edgeMarginInsets];
+    }
 }
 
 - (void)xt_hiddenEmptyDataSet {

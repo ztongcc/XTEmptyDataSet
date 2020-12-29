@@ -7,12 +7,31 @@
 //
 
 #import "XTAppDelegate.h"
+#import <UIView+XTEmptyDataSet.h>
 
 @implementation XTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [UIView xt_setupGlobalEmptySetData:^(XTEmptyDataSetType type, XTDataSetConfig * _Nonnull config) {
+        if (type == XTEmptyDataSetTypeLoading) {
+            config.emptyStyle = XTDataSetStyleIndicator;
+        }else if (type == XTEmptyDataSetTypeError) {
+            config.emptyStyle = XTDataSetStyleText;
+            config.lableText = @"网络出错";
+        }else if (type == XTEmptyDataSetTypeNoData) {
+            config.emptyStyle = XTDataSetStyleTextAction;
+            config.lableText = @"暂无数据";
+            config.buttonCornerRadius = 4;
+            config.buttonBorderColor = [UIColor blueColor];
+            config.buttonBorderWidth = 1;
+            
+            config.buttonNormalTitleColor = [UIColor blueColor];
+            config.buttonTouchHandler = ^{
+                NSLog(@"重试");
+            };
+        }
+    }];
     return YES;
 }
 

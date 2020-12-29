@@ -6,6 +6,7 @@
 //
 
 #import "UIScrollView+XTEmptyDataSet.h"
+#import <objc/runtime.h>
 
 @implementation UIScrollView (XTEmptyDataSet)
 
@@ -19,7 +20,8 @@
 }
 
 - (NSInteger (^)(void))xt_itemCountHandler {
-    return objc_getAssociatedObject(self, _cmd);
+    NSInteger (^itemCountHandler)(void) = objc_getAssociatedObject(self, _cmd);
+    return itemCountHandler;
 }
 
 - (void)setXt_itemCountHandler:(NSInteger (^)(void))xt_itemCountHandler {
@@ -34,14 +36,13 @@
     return YES;
 }
 
-
 - (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type {
     [self xt_captureStateIfEmptyDisplay:type refreshEmptyData:NO];
 }
 
 - (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate {
     if ([self xt_shouldDispaly]) {
-        [self xt_display:type refreshDataSet:isUpdate];
+        [self xt_display:type refreshSetData:isUpdate];
     }else {
         [self xt_hiddenEmptyDataSet];
     }
@@ -87,10 +88,10 @@
     [self xt_reloadDataIfEmptyDisplay:type refreshEmptyData:NO];
 }
 
-- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isNeed {
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isRefresh {
     [self reloadData];
     if ([self xt_shouldDispaly]) {
-        [self xt_display:type refreshDataSet:isNeed];
+        [self xt_display:type refreshSetData:isRefresh];
     }else {
         [self xt_hiddenEmptyDataSet];
     }
@@ -138,10 +139,10 @@
     [self xt_reloadDataIfEmptyDisplay:type refreshEmptyData:NO];
 }
 
-- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)need {
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isRefresh {
     [self reloadData];
     if ([self xt_shouldDispaly]) {
-        [self xt_display:type refreshDataSet:need];
+        [self xt_display:type refreshSetData:isRefresh];
     }else {
         [self xt_hiddenEmptyDataSet];
     }

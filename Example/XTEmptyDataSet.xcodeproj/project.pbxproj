@@ -24,6 +24,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		A5ED5162259AEED1009B9C75 /* XTTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5ED5160259AEED1009B9C75 /* XTTestViewController.m */; };
+		A5ED5163259AEED1009B9C75 /* XTTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5ED5161259AEED1009B9C75 /* XTTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		01CB682E8765F6ABEDABA854 /* Pods-XTEmptyDataSet_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTEmptyDataSet_Tests.debug.xcconfig"; path = "Target Support Files/Pods-XTEmptyDataSet_Tests/Pods-XTEmptyDataSet_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		044DB3A080DBA2568BA005B9 /* Pods-XTEmptyDataSet_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTEmptyDataSet_Example.debug.xcconfig"; path = "Target Support Files/Pods-XTEmptyDataSet_Example/Pods-XTEmptyDataSet_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		15F4AFAEF309F33FFF9DB095 /* Pods-XTEmptyDataSet_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTEmptyDataSet_Tests.release.xcconfig"; path = "Target Support Files/Pods-XTEmptyDataSet_Tests/Pods-XTEmptyDataSet_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		486C2CD49D37CC5978191D15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		486C2CD49D37CC5978191D15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* XTEmptyDataSet_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTEmptyDataSet_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,9 +65,12 @@
 		6A09CA220DD110B4A41B4D07 /* Pods_XTEmptyDataSet_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTEmptyDataSet_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B8E70913A020FC0CCE71F92 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8B8E70913A020FC0CCE71F92 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9B48A329A73E20FE6FEC5F99 /* Pods_XTEmptyDataSet_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTEmptyDataSet_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA423C6E6FAADE18883764D2 /* XTEmptyDataSet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = XTEmptyDataSet.podspec; path = ../XTEmptyDataSet.podspec; sourceTree = "<group>"; };
+		A5ED515F259AEED1009B9C75 /* XTTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTTestViewController.h; sourceTree = "<group>"; };
+		A5ED5160259AEED1009B9C75 /* XTTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTTestViewController.m; sourceTree = "<group>"; };
+		A5ED5161259AEED1009B9C75 /* XTTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTTestViewController.xib; sourceTree = "<group>"; };
+		BA423C6E6FAADE18883764D2 /* XTEmptyDataSet.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XTEmptyDataSet.podspec; path = ../XTEmptyDataSet.podspec; sourceTree = "<group>"; };
 		C5D94834CB1A921CFDCF07B9 /* Pods-XTEmptyDataSet_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTEmptyDataSet_Example.release.xcconfig"; path = "Target Support Files/Pods-XTEmptyDataSet_Example/Pods-XTEmptyDataSet_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +108,6 @@
 				01CB682E8765F6ABEDABA854 /* Pods-XTEmptyDataSet_Tests.debug.xcconfig */,
 				15F4AFAEF309F33FFF9DB095 /* Pods-XTEmptyDataSet_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,12 +148,15 @@
 		6003F593195388D20070C39A /* Example for XTEmptyDataSet */ = {
 			isa = PBXGroup;
 			children = (
+				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F59C195388D20070C39A /* XTAppDelegate.h */,
 				6003F59D195388D20070C39A /* XTAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* XTViewController.h */,
 				6003F5A6195388D20070C39A /* XTViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				A5ED515F259AEED1009B9C75 /* XTTestViewController.h */,
+				A5ED5160259AEED1009B9C75 /* XTTestViewController.m */,
+				A5ED5161259AEED1009B9C75 /* XTTestViewController.xib */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -258,6 +265,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -277,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ED5163259AEED1009B9C75 /* XTTestViewController.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -364,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ED5162259AEED1009B9C75 /* XTTestViewController.m in Sources */,
 				6003F59E195388D20070C39A /* XTAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* XTViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

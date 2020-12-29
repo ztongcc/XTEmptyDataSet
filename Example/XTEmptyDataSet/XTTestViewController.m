@@ -1,31 +1,29 @@
 //
-//  XTViewController.m
-//  XTEmptyDataSet
+//  XTTestViewController.m
+//  XTEmptyDataSet_Example
 //
-//  Created by ztongcc on 12/20/2020.
-//  Copyright (c) 2020 ztongcc. All rights reserved.
+//  Created by ztong.cheng on 2020/12/29.
+//  Copyright © 2020 ztongcc. All rights reserved.
 //
 
-#import "XTViewController.h"
-#import <UIScrollView+XTEmptyDataSet.h>
 #import "XTTestViewController.h"
+#import <UIScrollView+XTEmptyDataSet.h>
 
-@interface XTViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface XTTestViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation XTViewController
+@implementation XTTestViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-
-    
-    [self.tableView reloadData];
-    
+    // Do any additional setup after loading the view from its nib.
+            
     [self.tableView xt_display:XTEmptyDataSetTypeLoading];
-
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView xt_reloadDataIfEmptyDisplay:XTEmptyDataSetTypeNoData];
     });
@@ -47,15 +45,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     XTTestViewController * testVC = [[XTTestViewController alloc] initWithNibName:@"XTTestViewController" bundle:nil];
     [self.navigationController pushViewController:testVC animated:YES];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
