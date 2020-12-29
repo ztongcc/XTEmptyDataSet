@@ -17,11 +17,8 @@
         if (type == XTEmptyDataSetTypeLoading) {
             config.emptyStyle = XTDataSetStyleIndicator;
         }else if (type == XTEmptyDataSetTypeError) {
-            config.emptyStyle = XTDataSetStyleText;
-            config.lableText = @"网络出错";
-        }else if (type == XTEmptyDataSetTypeNoData) {
             config.emptyStyle = XTDataSetStyleTextAction;
-            config.lableText = @"暂无数据";
+            config.lableText = @"网络出错";
             config.buttonCornerRadius = 4;
             config.buttonBorderColor = [UIColor blueColor];
             config.buttonBorderWidth = 1;
@@ -30,6 +27,10 @@
             config.buttonTouchHandler = ^{
                 NSLog(@"重试");
             };
+
+        }else if (type == XTEmptyDataSetTypeNoData) {
+            config.emptyStyle = XTDataSetStyleTextAction;
+            config.lableText = @"暂无数据";
         }
     }];
     return YES;
