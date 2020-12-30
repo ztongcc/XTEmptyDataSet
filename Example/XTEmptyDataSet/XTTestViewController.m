@@ -19,7 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-            
+    
+    
+    [self.tableView xt_updateEmptySetData:XTEmptyDataSetTypeLoading handler:^(XTDataSetConfig * _Nonnull config) {
+        config.dataSetStyle = XTDataSetStyleIndicatorText;
+        config.lableText = @"正在加载中...";
+    }];
+    
     [self.tableView xt_display:XTEmptyDataSetTypeLoading];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];

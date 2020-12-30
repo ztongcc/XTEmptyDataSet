@@ -72,14 +72,13 @@ static NSMutableDictionary * xt_globalConfigs;
 
 + (XTDataSetConfig *)blankIdle {
     XTDataSetConfig * config = [[XTDataSetConfig alloc] init];
-    config.emptyStyle = XTDataSetStyleNone;
+    config.dataSetStyle = XTDataSetStyleNone;
     return config;
 }
 
-
 - (void)mergeDataFrom:(XTDataSetConfig *)config {
-    self.emptyStyle = config.emptyStyle;
-    self.layoutStyle = config.layoutStyle;
+    self.dataSetStyle = config.dataSetStyle;
+    self.dataSetLayout = config.dataSetLayout;
     self.backgroundColor = config.backgroundColor;
     
     self.lableText = config.lableText;
@@ -119,9 +118,26 @@ static NSMutableDictionary * xt_globalConfigs;
     self.edgeMarginInsets = config.edgeMarginInsets;
 }
 
+- (CGSize)lableBoundingSize {
+    CGSize size = CGSizeZero;
+    CGFloat maxWidth = [UIScreen mainScreen].bounds.size.width;
+    maxWidth = maxWidth - self.lableHorizontalMargin * 2;
+    
+    if (self.lableAttributedText) {
+        size = [self.lableAttributedText boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size;
+    }else {
+        NSAttributedString * text = [[NSAttributedString alloc] initWithString:self.lableText attributes:@{NSFontAttributeName:self.lableTextFont}];
+        size = [text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size;
+    }
+    return size;
+}
+
 // text default config
 - (CGFloat)lableHorizontalMargin {
     return _lableHorizontalMargin > 0?_lableHorizontalMargin:30;
+}
+- (UIFont *)lableTextFont {
+    return _lableTextFont?_lableTextFont:[UIFont systemFontOfSize:15];
 }
 
 // button default config
@@ -137,16 +153,14 @@ static NSMutableDictionary * xt_globalConfigs;
 
 - (CGFloat)itemVerticalSpace {
     return _itemVerticalSpace > 0?_itemVerticalSpace:30;
-
 }
-
 @end
 
 
 
 @interface XTDataSetView ()
 
-@property (nonatomic, assign)XTDataSetStyle  currentStyle;
+@property (nonatomic, assign)XTDataSetStyle  currentDataSetStyle;
 @property (nonatomic, strong)XTDataSetConfig * config;
 @property (nonatomic, strong)UILabel * descriptionLable;
 @property (nonatomic, strong)UIImageView * iconImageView;
@@ -166,7 +180,7 @@ static NSMutableDictionary * xt_globalConfigs;
     self = [super initWithFrame:frame];
     if (self) {
         _config = config;
-        _currentStyle = config.emptyStyle;
+        _currentDataSetStyle = config.dataSetStyle;
         self.translatesAutoresizingMaskIntoConstraints = NO;
         [self layout];
         [self bindData];
@@ -175,7 +189,7 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (void)refreshSetData {
-    if (_currentStyle != self.config.emptyStyle) {
+    if (_currentDataSetStyle != self.config.dataSetStyle) {
         [self clearAllLayoutViews];
         [self layout];
     }
@@ -200,7 +214,7 @@ static NSMutableDictionary * xt_globalConfigs;
                                @(XTDataSetStyleImageAction):@"bindImageAction",
                                @(XTDataSetStyleTextAction):@"bindTextAction"};
     
-    SEL selector = NSSelectorFromString(layouts[@(self.config.emptyStyle)]);
+    SEL selector = NSSelectorFromString(layouts[@(self.config.dataSetStyle)]);
     if (selector) {
         NSMethodSignature * signature = [self methodSignatureForSelector:selector];
         NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
@@ -222,7 +236,7 @@ static NSMutableDictionary * xt_globalConfigs;
                                @(XTDataSetStyleTextAction):@"layoutTextAction",
                                @(XTDataSetStyleCustomView):@"layoutCustomView"};
     
-    SEL selector = NSSelectorFromString(layouts[@(self.config.emptyStyle)]);
+    SEL selector = NSSelectorFromString(layouts[@(self.config.dataSetStyle)]);
     if (selector) {
         NSMethodSignature * signature = [self methodSignatureForSelector:selector];
         NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
@@ -233,7 +247,7 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (void)xt_dataSetViewWillAppear {
-    if (_config.emptyStyle == XTDataSetStyleIndicator) {
+    if (_config.dataSetStyle == XTDataSetStyleIndicator) {
         [self.indicatorView startAnimating];
     }
     if (_config.xt_dataSetViewWillAppear) {
@@ -242,7 +256,7 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (void)xt_dataSetViewWillDisappear {
-    if (self.config.emptyStyle == XTDataSetStyleIndicator) {
+    if (self.config.dataSetStyle == XTDataSetStyleIndicator) {
         [self.indicatorView stopAnimating];
     }
     
@@ -315,12 +329,12 @@ static NSMutableDictionary * xt_globalConfigs;
 #pragma mark -
 - (void)layoutIndicator {
     [self addSubview:self.indicatorView];
-    [self xt_addConstraint:self.indicatorView offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.indicatorView offset:_config.centerOffset layout:_config.dataSetLayout];
 }
 
 - (void)layoutText {
     [self addSubview:self.descriptionLable];
-    [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.dataSetLayout];
     [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 }
 
@@ -328,12 +342,12 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.iconImageView];
     CGSize size = CGSizeEqualToSize(CGSizeZero, _config.imageSize)?_config.image.size:_config.imageSize;
     [self xt_addConstraint:self.iconImageView size:size];
-    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.dataSetLayout];
 }
 
 - (void)layoutAction {
     [self addSubview:self.actionButton];
-    [self xt_addConstraint:self.actionButton offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.actionButton offset:_config.centerOffset layout:_config.dataSetLayout];
     [self xt_addConstraint:self.actionButton height:_config.buttonHeight];
     [self xt_addConstraint:self.actionButton horizontalPadding:_config.buttonHorizontalMargin];
 }
@@ -341,7 +355,7 @@ static NSMutableDictionary * xt_globalConfigs;
 - (void)layoutIndicatorText {
     [self addSubview:self.indicatorView];
     [self addSubview:self.descriptionLable];
-    [self xt_addConstraint:self.indicatorView offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.indicatorView offset:_config.centerOffset layout:_config.dataSetLayout];
     
     [self xt_addRelativeConstraint:self.descriptionLable toView:self.indicatorView offset:CGPointMake(0, _config.itemVerticalSpace)];
     [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
@@ -351,7 +365,7 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.iconImageView];
     [self addSubview:self.descriptionLable];
     
-    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.dataSetLayout];
     
     [self xt_addRelativeConstraint:self.descriptionLable toView:self.iconImageView offset:CGPointMake(0, _config.itemVerticalSpace)];
     [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
@@ -361,7 +375,7 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.iconImageView];
     [self addSubview:self.actionButton];
     
-    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.dataSetLayout];
     
     [self xt_addRelativeConstraint:self.actionButton toView:self.iconImageView offset:CGPointMake(0, _config.itemVerticalSpace)];
     [self xt_addConstraint:self.actionButton horizontalPadding:_config.buttonHorizontalMargin];
@@ -371,7 +385,7 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.descriptionLable];
     [self addSubview:self.actionButton];
     
-    [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.dataSetLayout];
     [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 
     [self xt_addRelativeConstraint:self.actionButton toView:self.descriptionLable offset:CGPointMake(0, _config.itemVerticalSpace)];
@@ -384,7 +398,7 @@ static NSMutableDictionary * xt_globalConfigs;
     _config.customView.translatesAutoresizingMaskIntoConstraints = NO;
     CGSize size = CGSizeEqualToSize(CGSizeZero, _config.customViewSize)?_config.customView.bounds.size:_config.customViewSize;
     [self xt_addConstraint:_config.customView size:size];
-    [self xt_addConstraint:_config.customView offset:_config.centerOffset layout:_config.layoutStyle];
+    [self xt_addConstraint:_config.customView offset:_config.centerOffset layout:_config.dataSetLayout];
 }
 
 - (void)onTouchEvent {
@@ -426,11 +440,6 @@ static NSMutableDictionary * xt_globalConfigs;
         [_actionButton addTarget:self action:@selector(onTouchEvent) forControlEvents:UIControlEventTouchUpInside];
     }
     return _actionButton;
-}
-
-- (void)dealloc
-{
-    NSLog(@"%s", __func__);
 }
 @end
 

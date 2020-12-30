@@ -41,15 +41,15 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 @class XTDataSetView;
 @interface XTDataSetConfig : NSObject
 
-@property (nonatomic, assign) XTDataSetStyle emptyStyle;
+@property (nonatomic, assign) XTDataSetStyle dataSetStyle;
 // 默认 XTDataSetLayoutCenter
-@property (nonatomic, assign) XTDataSetLayout layoutStyle;
+@property (nonatomic, assign) XTDataSetLayout dataSetLayout;
 
 @property (nonatomic, strong) UIColor * backgroundColor;
 
 // text
-@property (nonatomic, assign) CGFloat lableHorizontalMargin;
-@property (nonatomic, strong) UIFont * lableTextFont;
+@property (nonatomic, assign) CGFloat lableHorizontalMargin; /// default 30
+@property (nonatomic, strong) UIFont * lableTextFont;  /// default [UIFont systemFontOfSize:15]
 @property (nonatomic, strong) UIColor * lableTextColor;
 @property (nonatomic,   copy) NSString * lableText;
 @property (nonatomic,   copy) NSAttributedString * lableAttributedText;

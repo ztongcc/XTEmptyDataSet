@@ -15,9 +15,9 @@
 {
     [UIView xt_setupGlobalEmptySetData:^(XTEmptyDataSetType type, XTDataSetConfig * _Nonnull config) {
         if (type == XTEmptyDataSetTypeLoading) {
-            config.emptyStyle = XTDataSetStyleIndicator;
+            config.dataSetStyle = XTDataSetStyleIndicator;
         }else if (type == XTEmptyDataSetTypeError) {
-            config.emptyStyle = XTDataSetStyleTextAction;
+            config.dataSetStyle = XTDataSetStyleTextAction;
             config.lableText = @"网络出错";
             config.buttonCornerRadius = 4;
             config.buttonBorderColor = [UIColor blueColor];
@@ -29,7 +29,7 @@
             };
 
         }else if (type == XTEmptyDataSetTypeNoData) {
-            config.emptyStyle = XTDataSetStyleTextAction;
+            config.dataSetStyle = XTDataSetStyleTextAction;
             config.lableText = @"暂无数据";
         }
     }];
