@@ -203,7 +203,7 @@ CGPoint XTPointMakeOffSetY(CGPoint point, CGFloat diffY) {
     return self;
 }
 
-- (void)refreshSetData {
+- (void)refreshDataSet {
     if (_currentDataSetStyle != self.config.dataSetStyle) {
         [self clearAllLayoutViews];
         [self layout];
@@ -580,15 +580,15 @@ CGPoint XTPointMakeOffSetY(CGPoint point, CGFloat diffY) {
     NSMutableDictionary * viewsDict = [self xt_emptyDataSetViewsDictionary];
     XTDataSetView * emptyView = (XTDataSetView *)viewsDict[@(type)];
     if (emptyView) {
-        [emptyView refreshSetData];
+        [emptyView refreshDataSet];
     }
 }
 
 - (void)xt_display:(XTEmptyDataSetType)type {
-    [self xt_display:type refreshSetData:NO];
+    [self xt_display:type refreshDataSet:NO];
 }
 
-- (void)xt_display:(XTEmptyDataSetType)type refreshSetData:(BOOL)refresh {
+- (void)xt_display:(XTEmptyDataSetType)type refreshDataSet:(BOOL)refresh {
     [self xt_hiddenEmptyDataSet];
     
     NSMutableDictionary * viewsDict = [self xt_emptyDataSetViewsDictionary];
@@ -600,7 +600,7 @@ CGPoint XTPointMakeOffSetY(CGPoint point, CGFloat diffY) {
     }
     
     if (refresh) {
-        [emptyView refreshSetData];
+        [emptyView refreshDataSet];
     }
 
     [emptyView xt_dataSetViewWillAppear];

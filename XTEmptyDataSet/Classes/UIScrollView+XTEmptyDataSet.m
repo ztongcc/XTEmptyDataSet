@@ -37,12 +37,12 @@
 }
 
 - (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type {
-    [self xt_captureStateIfEmptyDisplay:type refreshEmptyData:NO];
+    [self xt_captureStateIfEmptyDisplay:type refreshDataSet:NO];
 }
 
-- (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isUpdate {
+- (void)xt_captureStateIfEmptyDisplay:(XTEmptyDataSetType)type refreshDataSet:(BOOL)isUpdate {
     if ([self xt_shouldDispaly]) {
-        [self xt_display:type refreshSetData:isUpdate];
+        [self xt_display:type refreshDataSet:isUpdate];
     }else {
         [self xt_hiddenEmptyDataSet];
     }
@@ -84,19 +84,26 @@
     return YES;
 }
 
-- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type {
-    [self xt_reloadDataIfEmptyDisplay:type refreshEmptyData:NO];
+- (void)xt_dispalyIfEmpty:(XTEmptyDataSetType)type {
+    [self xt_dispalyIfEmpty:type refreshDataSet:NO];
 }
 
-- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isRefresh {
-    [self reloadData];
+- (void)xt_dispalyIfEmpty:(XTEmptyDataSetType)type refreshDataSet:(BOOL)isRefresh {
     if ([self xt_shouldDispaly]) {
-        [self xt_display:type refreshSetData:isRefresh];
+        [self xt_display:type refreshDataSet:isRefresh];
     }else {
         [self xt_hiddenEmptyDataSet];
     }
 }
 
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type {
+    [self xt_reloadDataIfEmptyDisplay:type refreshDataSet:NO];
+}
+
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshDataSet:(BOOL)isRefresh {
+    [self reloadData];
+    [self xt_dispalyIfEmpty:type refreshDataSet:isRefresh];
+}
 @end
 
 
@@ -135,17 +142,25 @@
     return YES;
 }
 
-- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type {
-    [self xt_reloadDataIfEmptyDisplay:type refreshEmptyData:NO];
+- (void)xt_dispalyIfEmpty:(XTEmptyDataSetType)type {
+    [self xt_dispalyIfEmpty:type refreshDataSet:NO];
 }
 
-- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshEmptyData:(BOOL)isRefresh {
-    [self reloadData];
+- (void)xt_dispalyIfEmpty:(XTEmptyDataSetType)type refreshDataSet:(BOOL)isRefresh {
     if ([self xt_shouldDispaly]) {
-        [self xt_display:type refreshSetData:isRefresh];
+        [self xt_display:type refreshDataSet:isRefresh];
     }else {
         [self xt_hiddenEmptyDataSet];
     }
+}
+
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type {
+    [self xt_reloadDataIfEmptyDisplay:type refreshDataSet:NO];
+}
+
+- (void)xt_reloadDataIfEmptyDisplay:(XTEmptyDataSetType)type refreshDataSet:(BOOL)isRefresh {
+    [self reloadData];
+    [self xt_dispalyIfEmpty:type refreshDataSet:isRefresh];
 }
 
 @end

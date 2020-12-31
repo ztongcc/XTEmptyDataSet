@@ -126,7 +126,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 + (XTDataSetView *)dataSetViewWithConfig:(XTDataSetConfig *)config;
 
-- (void)refreshSetData;
+- (void)refreshDataSet;
 
 @end
 
@@ -144,7 +144,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 - (void)xt_display:(XTEmptyDataSetType)type;
 
-- (void)xt_display:(XTEmptyDataSetType)type refreshSetData:(BOOL)refresh;
+- (void)xt_display:(XTEmptyDataSetType)type refreshDataSet:(BOOL)refresh;
 
 - (void)xt_hiddenEmptyDataSet;
 - (void)xt_clearEmptyDataSet;

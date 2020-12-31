@@ -21,7 +21,7 @@
             config.lableTextColor = [UIColor lightGrayColor];
         }else if (type == XTEmptyDataSetTypeError) {
             config.dataSetStyle = XTDataSetStyleTextAction;
-            config.lableText = @"网络出错";
+            config.lableText = @"网络出错, 点击重新加载";
             config.buttonCornerRadius = 4;
             config.buttonBorderColor = [UIColor blueColor];
             config.buttonBorderWidth = 1;
@@ -32,7 +32,8 @@
             };
 
         }else if (type == XTEmptyDataSetTypeNoData) {
-            config.dataSetStyle = XTDataSetStyleText;
+            config.image = [UIImage imageNamed:@"empty_data"];            
+            config.dataSetStyle = XTDataSetStyleImageText;
             config.lableText = @"暂无数据";
             config.lableTextColor = [UIColor lightGrayColor];
         }
