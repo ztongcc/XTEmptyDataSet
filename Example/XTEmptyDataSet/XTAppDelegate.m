@@ -15,7 +15,10 @@
 {
     [UIView xt_setupGlobalEmptySetData:^(XTEmptyDataSetType type, XTDataSetConfig * _Nonnull config) {
         if (type == XTEmptyDataSetTypeLoading) {
-            config.dataSetStyle = XTDataSetStyleIndicator;
+            config.dataSetStyle = XTDataSetStyleIndicatorText;
+            config.indicatorViewStyle = UIActivityIndicatorViewStyleGray;
+            config.lableText = @"正在加载...";
+            config.lableTextColor = [UIColor lightGrayColor];
         }else if (type == XTEmptyDataSetTypeError) {
             config.dataSetStyle = XTDataSetStyleTextAction;
             config.lableText = @"网络出错";
@@ -29,8 +32,9 @@
             };
 
         }else if (type == XTEmptyDataSetTypeNoData) {
-            config.dataSetStyle = XTDataSetStyleTextAction;
+            config.dataSetStyle = XTDataSetStyleText;
             config.lableText = @"暂无数据";
+            config.lableTextColor = [UIColor lightGrayColor];
         }
     }];
     return YES;

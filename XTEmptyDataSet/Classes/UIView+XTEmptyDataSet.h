@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger, XTEmptyDataSetType) {
     XTEmptyDataSetTypeCustom,
 };
 
-
 typedef NS_ENUM(NSInteger, XTDataSetStyle) {
     XTDataSetStyleNone,
     XTDataSetStyleIndicator,
@@ -47,6 +46,12 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 @property (nonatomic, strong) UIColor * backgroundColor;
 
+
+// indicator
+@property (nonatomic, assign) UIActivityIndicatorViewStyle indicatorViewStyle; /// default UIActivityIndicatorViewStyleMedium
+@property (nonatomic, strong) UIColor * indicatorColor;
+
+
 // text
 @property (nonatomic, assign) CGFloat lableHorizontalMargin; /// default 30
 @property (nonatomic, strong) UIFont * lableTextFont;  /// default [UIFont systemFontOfSize:15]
@@ -63,7 +68,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 
 
 // actionButton
-@property (nonatomic, assign) CGFloat    buttonHeight; // 默认 40
+@property (nonatomic, assign) CGFloat    buttonHeight; // 默认 36
 @property (nonatomic, assign) CGFloat    buttonHorizontalMargin; // 默认 30
 
 @property (nonatomic,   copy) NSString * buttonNormalTitle; // 默认 点击重试
@@ -85,7 +90,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 @property (nonatomic, assign) CGFloat    buttonBorderWidth;
 @property (nonatomic, strong) UIColor *  buttonBorderColor;
 
-// 自定义
+// 自定义外观， 如需修改 Button 的 高度 和左右间距 请使用 buttonHeight 和 buttonHorizontalMargin
 @property (nonatomic, copy) void (^xt_configButtonAppearance)(UIButton * sender);
 @property (nonatomic, copy) dispatch_block_t buttonTouchHandler;
 
@@ -97,7 +102,7 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 // layout
 // 整体居中的偏移量
 @property (nonatomic, assign)CGPoint centerOffset;
-// 元素之间纵轴间距 默认 30
+// 元素之间纵轴间距 默认 20
 @property (nonatomic, assign)CGFloat itemVerticalSpace;
 // 边距
 @property (nonatomic, assign)UIEdgeInsets edgeMarginInsets;
@@ -106,7 +111,6 @@ typedef NS_ENUM(NSInteger, XTDataSetLayout) {
 // 生命周期
 @property (nonatomic, copy)void (^xt_dataSetViewWillAppear)(XTDataSetView * setView, XTDataSetConfig * config);
 @property (nonatomic, copy)void (^xt_dataSetViewWillDisappear)(XTDataSetView * setView, XTDataSetConfig * config);
-
 
 
 + (XTDataSetConfig *)blankIdle;

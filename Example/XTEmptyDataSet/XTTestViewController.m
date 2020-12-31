@@ -23,6 +23,7 @@
     
     [self.tableView xt_updateEmptySetData:XTEmptyDataSetTypeLoading handler:^(XTDataSetConfig * _Nonnull config) {
         config.dataSetStyle = XTDataSetStyleIndicatorText;
+        config.indicatorColor = [UIColor purpleColor];
         config.lableText = @"正在加载中...";
     }];
     

@@ -13,6 +13,8 @@
 @interface XTViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (assign, nonatomic) NSInteger data;
+
 @end
 
 @implementation XTViewController
@@ -21,12 +23,13 @@
 {
     [super viewDidLoad];
 
-    
-    [self.tableView reloadData];
+    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.tableView.tableFooterView = [UIView new];
 
     [self.tableView xt_display:XTEmptyDataSetTypeLoading];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.data = 10;
         [self.tableView xt_reloadDataIfEmptyDisplay:XTEmptyDataSetTypeNoData];
     });
 }
@@ -36,7 +39,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.data;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

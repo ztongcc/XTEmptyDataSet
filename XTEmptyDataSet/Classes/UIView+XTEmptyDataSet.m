@@ -11,6 +11,10 @@
 
 static NSMutableDictionary * xt_globalConfigs;
 
+CGPoint XTPointMakeOffSetY(CGPoint point, CGFloat diffY) {
+    point.y += diffY;
+    return point;
+}
 
 @interface UIView (XTEmptyViewLayoutConstraint)
 @end
@@ -126,7 +130,7 @@ static NSMutableDictionary * xt_globalConfigs;
     if (self.lableAttributedText) {
         size = [self.lableAttributedText boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size;
     }else {
-        NSAttributedString * text = [[NSAttributedString alloc] initWithString:self.lableText attributes:@{NSFontAttributeName:self.lableTextFont}];
+        NSAttributedString * text = [[NSAttributedString alloc] initWithString:self.lableText?:@"" attributes:@{NSFontAttributeName:self.lableTextFont}];
         size = [text boundingRectWithSize:CGSizeMake(maxWidth, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading context:nil].size;
     }
     return size;
@@ -153,7 +157,7 @@ static NSMutableDictionary * xt_globalConfigs;
 
 // button default config
 - (CGFloat)buttonHeight {
-    return _buttonHeight > 0?_buttonHeight:40;
+    return _buttonHeight > 0?_buttonHeight:36;
 }
 - (CGFloat)buttonHorizontalMargin {
     return _buttonHorizontalMargin > 0?_buttonHorizontalMargin:30;
@@ -163,7 +167,7 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (CGFloat)itemVerticalSpace {
-    return _itemVerticalSpace > 0?_itemVerticalSpace:30;
+    return _itemVerticalSpace > 0?_itemVerticalSpace:20;
 }
 @end
 
@@ -217,7 +221,8 @@ static NSMutableDictionary * xt_globalConfigs;
 
 - (void)bindData {
     self.backgroundColor = self.config.backgroundColor;
-    NSDictionary * layouts = @{@(XTDataSetStyleText):@"bindText",
+    NSDictionary * layouts = @{@(XTDataSetStyleIndicator):@"bindIndicator",
+                               @(XTDataSetStyleText):@"bindText",
                                @(XTDataSetStyleImage):@"bindImage",
                                @(XTDataSetStyleAction):@"bindAction",
                                @(XTDataSetStyleIndicatorText):@"bindIndicatorText",
@@ -258,7 +263,8 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (void)xt_dataSetViewWillAppear {
-    if (_config.dataSetStyle == XTDataSetStyleIndicator) {
+    if (_config.dataSetStyle == XTDataSetStyleIndicator ||
+        _config.dataSetStyle == XTDataSetStyleIndicatorText) {
         [self.indicatorView startAnimating];
     }
     if (_config.xt_dataSetViewWillAppear) {
@@ -267,7 +273,8 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (void)xt_dataSetViewWillDisappear {
-    if (self.config.dataSetStyle == XTDataSetStyleIndicator) {
+    if (_config.dataSetStyle == XTDataSetStyleIndicator ||
+        _config.dataSetStyle == XTDataSetStyleIndicatorText) {
         [self.indicatorView stopAnimating];
     }
     
@@ -277,6 +284,14 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 #pragma mark -
+
+- (void)bindIndicator {
+    self.indicatorView.activityIndicatorViewStyle = _config.indicatorViewStyle;
+    if (_config.indicatorColor) {
+        self.indicatorView.color = _config.indicatorColor;
+    }
+}
+
 - (void)bindText {
     self.descriptionLable.font = _config.lableTextFont;
     self.descriptionLable.textColor = _config.lableTextColor;
@@ -319,6 +334,7 @@ static NSMutableDictionary * xt_globalConfigs;
 }
 
 - (void)bindIndicatorText {
+    [self bindIndicator];
     [self bindText];
 }
 
@@ -351,8 +367,9 @@ static NSMutableDictionary * xt_globalConfigs;
 
 - (void)layoutImage {
     [self addSubview:self.iconImageView];
-    CGSize size = CGSizeEqualToSize(CGSizeZero, _config.imageSize)?_config.image.size:_config.imageSize;
-    [self xt_addConstraint:self.iconImageView size:size];
+    if (CGSizeEqualToSize(CGSizeZero, _config.imageSize)) {
+        [self xt_addConstraint:self.iconImageView size:_config.imageSize];
+    }
     [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.dataSetLayout];
 }
 
@@ -369,8 +386,9 @@ static NSMutableDictionary * xt_globalConfigs;
     
     CGSize textSize = [_config lableBoundingSize];
     
-    [self xt_addConstraint:self.indicatorView offset:_config.centerOffset layout:_config.dataSetLayout];
-    
+    CGFloat diffOff = (textSize.height + _config.itemVerticalSpace + CGRectGetHeight(_indicatorView.bounds))/2;
+    [self xt_addConstraint:self.indicatorView offset:XTPointMakeOffSetY(_config.centerOffset, - diffOff) layout:_config.dataSetLayout];
+
     [self xt_addRelativeConstraint:self.descriptionLable toView:self.indicatorView offset:CGPointMake(0, _config.itemVerticalSpace)];
     [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 }
@@ -379,7 +397,10 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.iconImageView];
     [self addSubview:self.descriptionLable];
     
-    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.dataSetLayout];
+    CGSize textSize = [_config lableBoundingSize];
+    CGFloat diffOff = (textSize.height + _config.itemVerticalSpace + _config.imageSize.height)/2;
+    
+    [self xt_addConstraint:self.iconImageView offset:XTPointMakeOffSetY(_config.centerOffset, - diffOff) layout:_config.dataSetLayout];
     [self xt_addConstraint:self.iconImageView size:_config.imageSize];
 
     [self xt_addRelativeConstraint:self.descriptionLable toView:self.iconImageView offset:CGPointMake(0, _config.itemVerticalSpace)];
@@ -390,7 +411,9 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.iconImageView];
     [self addSubview:self.actionButton];
     
-    [self xt_addConstraint:self.iconImageView offset:_config.centerOffset layout:_config.dataSetLayout];
+    CGFloat diffOff = (_config.imageSize.height + _config.itemVerticalSpace + _config.buttonHeight)/2;
+    
+    [self xt_addConstraint:self.iconImageView offset:XTPointMakeOffSetY(_config.centerOffset, - diffOff) layout:_config.dataSetLayout];
     
     [self xt_addRelativeConstraint:self.actionButton toView:self.iconImageView offset:CGPointMake(0, _config.itemVerticalSpace)];
     [self xt_addConstraint:self.actionButton horizontalPadding:_config.buttonHorizontalMargin];
@@ -401,7 +424,10 @@ static NSMutableDictionary * xt_globalConfigs;
     [self addSubview:self.descriptionLable];
     [self addSubview:self.actionButton];
     
-    [self xt_addConstraint:self.descriptionLable offset:_config.centerOffset layout:_config.dataSetLayout];
+    CGSize textSize = [_config lableBoundingSize];
+    CGFloat diffOff = (_config.buttonHeight + _config.itemVerticalSpace + textSize.height)/2;
+  
+    [self xt_addConstraint:self.descriptionLable offset:XTPointMakeOffSetY(_config.centerOffset, - diffOff) layout:_config.dataSetLayout];
     [self xt_addConstraint:self.descriptionLable horizontalPadding:_config.lableHorizontalMargin];
 
     [self xt_addRelativeConstraint:self.actionButton toView:self.descriptionLable offset:CGPointMake(0, _config.itemVerticalSpace)];
@@ -434,6 +460,7 @@ static NSMutableDictionary * xt_globalConfigs;
 - (UILabel *)descriptionLable {
     if (!_descriptionLable) {
         _descriptionLable = [[UILabel alloc] init];
+        _descriptionLable.numberOfLines = 0;
         _descriptionLable.textAlignment = NSTextAlignmentCenter;
         _descriptionLable.translatesAutoresizingMaskIntoConstraints = NO;
     }
